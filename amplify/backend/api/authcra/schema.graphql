@@ -1,0 +1,13 @@
+type AlumnosOctank @model {
+  id: ID!
+  Matricula: String!
+  Nombre: String!
+  Correo: String!
+  Semestre: String!
+  Carrera: String!
+  Materia: String!
+  Clase: String!
+  Description: String!
+  
+
+}

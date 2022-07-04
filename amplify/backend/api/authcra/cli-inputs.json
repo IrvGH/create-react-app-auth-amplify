@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "authcra",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "/Users/irvinen/Documents/Awsome_builder/AB_III/create-react-app-auth-amplify/amplify/backend/api/authcra/schema.graphql",
+    "defaultAuthType": {
+      "mode": "API_KEY",
+      "expirationTime": 7
+    }
+  }
+}

@@ -1,0 +1,183 @@
+type AlumnosOctank {
+  id: ID!
+  Matricula: String!
+  Nombre: String!
+  Correo: String!
+  Semestre: String!
+  Carrera: String!
+  Materia: String!
+  Clase: String!
+  Description: String!
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+enum ModelSortDirection {
+  ASC
+  DESC
+}
+
+type ModelAlumnosOctankConnection {
+  items: [AlumnosOctank]!
+  nextToken: String
+}
+
+input ModelStringInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelIDInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelIntInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelFloatInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  between: [Float]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelBooleanInput {
+  ne: Boolean
+  eq: Boolean
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelSizeInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+}
+
+input ModelAlumnosOctankFilterInput {
+  id: ModelIDInput
+  Matricula: ModelStringInput
+  Nombre: ModelStringInput
+  Correo: ModelStringInput
+  Semestre: ModelStringInput
+  Carrera: ModelStringInput
+  Materia: ModelStringInput
+  Clase: ModelStringInput
+  Description: ModelStringInput
+  and: [ModelAlumnosOctankFilterInput]
+  or: [ModelAlumnosOctankFilterInput]
+  not: ModelAlumnosOctankFilterInput
+}
+
+enum ModelAttributeTypes {
+  binary
+  binarySet
+  bool
+  list
+  map
+  number
+  numberSet
+  string
+  stringSet
+  _null
+}
+
+type Query {
+  getAlumnosOctank(id: ID!): AlumnosOctank
+  listAlumnosOctanks(filter: ModelAlumnosOctankFilterInput, limit: Int, nextToken: String): ModelAlumnosOctankConnection
+}
+
+input CreateAlumnosOctankInput {
+  id: ID
+  Matricula: String!
+  Nombre: String!
+  Correo: String!
+  Semestre: String!
+  Carrera: String!
+  Materia: String!
+  Clase: String!
+  Description: String!
+}
+
+input UpdateAlumnosOctankInput {
+  id: ID!
+  Matricula: String
+  Nombre: String
+  Correo: String
+  Semestre: String
+  Carrera: String
+  Materia: String
+  Clase: String
+  Description: String
+}
+
+input DeleteAlumnosOctankInput {
+  id: ID!
+}
+
+type Mutation {
+  createAlumnosOctank(input: CreateAlumnosOctankInput!, condition: ModelAlumnosOctankConditionInput): AlumnosOctank
+  updateAlumnosOctank(input: UpdateAlumnosOctankInput!, condition: ModelAlumnosOctankConditionInput): AlumnosOctank
+  deleteAlumnosOctank(input: DeleteAlumnosOctankInput!, condition: ModelAlumnosOctankConditionInput): AlumnosOctank
+}
+
+input ModelAlumnosOctankConditionInput {
+  Matricula: ModelStringInput
+  Nombre: ModelStringInput
+  Correo: ModelStringInput
+  Semestre: ModelStringInput
+  Carrera: ModelStringInput
+  Materia: ModelStringInput
+  Clase: ModelStringInput
+  Description: ModelStringInput
+  and: [ModelAlumnosOctankConditionInput]
+  or: [ModelAlumnosOctankConditionInput]
+  not: ModelAlumnosOctankConditionInput
+}
+
+type Subscription {
+  onCreateAlumnosOctank: AlumnosOctank @aws_subscribe(mutations: ["createAlumnosOctank"])
+  onUpdateAlumnosOctank: AlumnosOctank @aws_subscribe(mutations: ["updateAlumnosOctank"])
+  onDeleteAlumnosOctank: AlumnosOctank @aws_subscribe(mutations: ["deleteAlumnosOctank"])
+}
