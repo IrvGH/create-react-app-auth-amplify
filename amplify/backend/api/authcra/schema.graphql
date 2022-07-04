@@ -1,11 +1,12 @@
-type AlumnosOctank @model {
-  id: ID!
+type Prueba @model {
   Matricula: String!
-  Nombre: String!
-  Correo: String!
-  Semestre: String!
+  Asignatura: String!
   Carrera: String!
-  Materia: String!
   Clase: String!
-  Description: String!
+  Fecha: String!
+  Hora: String!
+  Nombre: String!
+  Semestre: String!
+  Correo: String!
+  URL: String!
 }
