@@ -1,7 +1,8 @@
 {
+    "CreateAPIKey": 1,
     "AppSyncApiName": "authcra",
     "DynamoDBBillingMode": "PAY_PER_REQUEST",
     "DynamoDBEnableServerSideEncryption": false,
     "S3DeploymentBucket": "amplify-authcra-dev-13931-deployment",
-    "S3DeploymentRootKey": "amplify-appsync-files/91235c2f6bf986beee97c6dacb9e02ce3f3c26de"
+    "S3DeploymentRootKey": "amplify-appsync-files/d29b1c4ecc2a63831470dea0e74dcfee47ecc014"
 }

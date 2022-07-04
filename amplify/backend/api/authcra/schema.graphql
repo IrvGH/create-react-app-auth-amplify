@@ -8,6 +8,4 @@ type AlumnosOctank @model {
   Materia: String!
   Clase: String!
   Description: String!
-  
-
 }
